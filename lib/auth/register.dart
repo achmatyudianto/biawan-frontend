@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:animals/animal/home.dart';
+import 'package:animals/main.dart';
 import 'package:animals/model/api.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -42,7 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
       localStorage.setString('user', json.encode(body['data']));
 
       Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => HomePage()));
+          context, new MaterialPageRoute(builder: (context) => MyApp()));
     } else {
       print(body);
       var errorMessage = '';
