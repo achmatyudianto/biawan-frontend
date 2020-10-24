@@ -37,8 +37,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.purple,
-      ),
+          primaryColor: Color(0xFF76a6ef),
+          fontFamily: 'ProximaNova',
+          primaryTextTheme: TextTheme(
+              headline6: TextStyle(
+            color: Colors.white,
+          ))),
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
         future: _function(),

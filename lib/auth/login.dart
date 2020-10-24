@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(
-              'Email / Password Salah',
+              'Email / Kata Sandi Salah',
               style: TextStyle(fontSize: 14.0),
             ),
             actions: <Widget>[
@@ -73,50 +73,59 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF8A2387),
-                Color(0xFFE94097),
-                Color(0xFFF27121),
-              ],
-            ),
+            color: Color(0xFFf5f8ff),
+            // gradient: LinearGradient(
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            //   colors: [
+            //     Color(0xFF8A2387),
+            //     Color(0xFFE94097),
+            //     Color(0xFFF27121),
+            //   ],
+            // ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 80),
               Container(
-                height: 430,
+                height: 465,
                 width: 325,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10.0,
+                      color: Colors.grey.shade200,
+                      spreadRadius: 2.0,
+                    )
+                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 30.0),
-                    Text(
-                      'Hello',
-                      style: TextStyle(fontSize: 35),
+                    Image(
+                      image: AssetImage("biawan.png"),
+                      width: 80.0,
                     ),
                     SizedBox(height: 10.0),
                     Text(
-                      'Please Login Your Account',
+                      'Biawan',
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 15.0),
                     Container(
                       width: 250,
                       child: TextField(
                         controller: emailController,
                         decoration: InputDecoration(
-                          labelText: 'Email Address',
+                          labelText: 'Email',
                           suffixIcon: Icon(
                             FontAwesomeIcons.envelope,
                             size: 17,
@@ -130,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: true,
                         controller: passwordController,
                         decoration: InputDecoration(
-                          labelText: 'Password',
+                          labelText: 'Kata Sandi',
                           suffixIcon: Icon(
                             FontAwesomeIcons.eyeSlash,
                             size: 17,
@@ -144,15 +153,15 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'Forget Password',
+                            'Lupa kanta sandi?',
                             style: TextStyle(
-                              color: Colors.orangeAccent[700],
+                              color: Colors.red.shade300,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     InkWell(
                       onTap: () {
                         _login();
@@ -162,23 +171,25 @@ class _LoginPageState extends State<LoginPage> {
                         width: 250,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xFF8A2387),
-                              Color(0xFFE94057),
-                              Color(0xFFF27121),
-                            ],
-                          ),
+                          color: Color(0xFF76a6ef),
+                          // gradient: LinearGradient(
+                          //   begin: Alignment.centerLeft,
+                          //   end: Alignment.centerRight,
+                          //   colors: [
+                          //     Color(0xFF8A2387),
+                          //     Color(0xFFE94057),
+                          //     Color(0xFFF27121),
+                          //   ],
+                          // ),
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(12.0),
                           child: Text(
-                            isLoading ? 'Memuat...' : 'Login',
+                            isLoading ? 'Memuat...' : 'Masuk',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
+                              fontSize: 15.0,
                             ),
                           ),
                         ),
@@ -205,7 +216,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                               'Daftar',
                               style: TextStyle(
-                                color: Colors.orangeAccent[700],
+                                color: Colors.red.shade300,
                               ),
                             ),
                           ),

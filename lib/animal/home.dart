@@ -21,7 +21,51 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text(
+          "Beranda",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        iconTheme: new IconThemeData(color: Colors.white),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Row(
+                children: [
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.redAccent,
+                      child: Icon(Icons.check),
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('Yudi', style: TextStyle(color: Colors.white)),
+                      Text('yudi@gmail.com',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  )
+                ],
+              ),
+              accountEmail: Text(''),
+            ),
+            ListTile(
+              title: Text("Home"),
+              onLongPress: () {},
+            )
+          ],
+        ),
       ),
       body: Container(
         child: InkWell(
