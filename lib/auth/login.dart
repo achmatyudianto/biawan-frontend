@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'Lupa kanta sandi?',
+                            'Lupa kata sandi?',
                             style: TextStyle(
                               color: Colors.red.shade300,
                             ),

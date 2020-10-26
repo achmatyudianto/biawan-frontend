@@ -122,177 +122,173 @@ class _RegisterPageState extends State<RegisterPage> {
           //     ],
           //   ),
           // ),
-          child: ListView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 50),
-                  Container(
-                    height: 585,
-                    width: 325,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 10.0,
-                          color: Colors.grey.shade200,
-                          spreadRadius: 2.0,
-                        )
-                      ],
+              SizedBox(height: 30),
+              Container(
+                height: 585,
+                width: 325,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10.0,
+                      color: Colors.grey.shade200,
+                      spreadRadius: 2.0,
+                    )
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 20.0),
+                    Image(
+                      image: AssetImage("biawan.png"),
+                      width: 80.0,
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(height: 20.0),
-                        Image(
-                          image: AssetImage("biawan.png"),
-                          width: 80.0,
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Biawan',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.brown,
-                          ),
-                        ),
-                        SizedBox(height: 20.0),
-                        Container(
-                          width: 250,
-                          child: TextField(
-                            controller: companyController,
-                            decoration: InputDecoration(
-                              labelText: 'Nama Perusahaan',
-                              suffixIcon: Icon(
-                                FontAwesomeIcons.building,
-                                size: 17,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 250,
-                          child: TextField(
-                            controller: nameController,
-                            decoration: InputDecoration(
-                              labelText: 'Nama',
-                              suffixIcon: Icon(
-                                FontAwesomeIcons.user,
-                                size: 17,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 250,
-                          child: TextField(
-                            controller: emailController,
-                            decoration: InputDecoration(
-                              labelText: 'Email',
-                              suffixIcon: Icon(
-                                FontAwesomeIcons.envelope,
-                                size: 17,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 250,
-                          child: TextField(
-                            controller: passwordController,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              labelText: 'Kata Sandi',
-                              suffixIcon: Icon(
-                                FontAwesomeIcons.eyeSlash,
-                                size: 17,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 250,
-                          child: TextField(
-                            controller: passwordConfirmationController,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              labelText: 'Konfirmasi Kata Sandi',
-                              suffixIcon: Icon(
-                                FontAwesomeIcons.eyeSlash,
-                                size: 17,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.0),
-                        InkWell(
-                          onTap: () {
-                            //_register();
-                            _blockir();
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: 250,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50.0),
-                              color: Color(0xFF76a6ef),
-                              // gradient: LinearGradient(
-                              //   begin: Alignment.centerLeft,
-                              //   end: Alignment.centerRight,
-                              //   colors: [
-                              //     Color(0xFF8A2387),
-                              //     Color(0xFFE94057),
-                              //     Color(0xFFF27121),
-                              //   ],
-                              // ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(12.0),
-                              child: Text(
-                                isLoading ? 'Memuat...' : 'Daftar',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(20, 20, 40, 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Sudah Punya Akun? ',
-                                style: TextStyle(
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text(
-                                  'Masuk',
-                                  style: TextStyle(
-                                    color: Colors.red.shade300,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                    SizedBox(height: 10.0),
+                    Text(
+                      'Biawan',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                ],
+                    SizedBox(height: 20.0),
+                    Container(
+                      width: 250,
+                      child: TextField(
+                        controller: companyController,
+                        decoration: InputDecoration(
+                          labelText: 'Nama Perusahaan',
+                          suffixIcon: Icon(
+                            FontAwesomeIcons.building,
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 250,
+                      child: TextField(
+                        controller: nameController,
+                        decoration: InputDecoration(
+                          labelText: 'Nama Pengguna',
+                          suffixIcon: Icon(
+                            FontAwesomeIcons.user,
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 250,
+                      child: TextField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          suffixIcon: Icon(
+                            FontAwesomeIcons.envelope,
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 250,
+                      child: TextField(
+                        controller: passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Kata Sandi',
+                          suffixIcon: Icon(
+                            FontAwesomeIcons.eyeSlash,
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 250,
+                      child: TextField(
+                        controller: passwordConfirmationController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Konfirmasi Kata Sandi',
+                          suffixIcon: Icon(
+                            FontAwesomeIcons.eyeSlash,
+                            size: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    InkWell(
+                      onTap: () {
+                        //_register();
+                        _blockir();
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 250,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Color(0xFF76a6ef),
+                          // gradient: LinearGradient(
+                          //   begin: Alignment.centerLeft,
+                          //   end: Alignment.centerRight,
+                          //   colors: [
+                          //     Color(0xFF8A2387),
+                          //     Color(0xFFE94057),
+                          //     Color(0xFFF27121),
+                          //   ],
+                          // ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Text(
+                            isLoading ? 'Memuat...' : 'Daftar',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20, 20, 40, 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Sudah Punya Akun? ',
+                            style: TextStyle(
+                              color: Colors.grey.shade700,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Masuk',
+                              style: TextStyle(
+                                color: Colors.red.shade300,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              SizedBox(height: 20),
             ],
           ),
         ),
