@@ -1,10 +1,11 @@
 import 'dart:convert';
-import 'package:animals/animal/home.dart';
-import 'package:animals/auth/register.dart';
-import 'package:animals/model/api.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../animal/dashboard.dart';
+import '../auth/register.dart';
+import '../model/api.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -35,8 +36,8 @@ class _LoginPageState extends State<LoginPage> {
       localStorage.setString('token', body['meta']['token']);
       localStorage.setString('user', json.encode(body['data']));
 
-      Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => HomePage()));
+      Navigator.pushReplacement(context,
+          new MaterialPageRoute(builder: (context) => DashboardPage()));
     } else {
       print(body);
       showDialog(

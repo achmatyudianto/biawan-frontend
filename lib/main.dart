@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'animal/home.dart';
+
 import 'auth/login.dart';
+import 'animal/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -49,7 +50,7 @@ class _MyAppState extends State<MyApp> {
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
           //print(snapshot.data);
           if (snapshot.data == true) {
-            return HomePage();
+            return DashboardPage();
           } else if (snapshot.data == false) {
             return LoginPage();
           } else {
@@ -59,6 +60,12 @@ class _MyAppState extends State<MyApp> {
           }
         },
       ),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => DashboardPage(),
+      //   '/cage': (context) => CagePage(),
+      //   '/animal': (context) => AnimalPage(),
+      // },
     );
   }
 }

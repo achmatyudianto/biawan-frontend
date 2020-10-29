@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'package:animals/animal/animal.dart';
+import 'package:animals/animal/cage.dart';
+import 'package:animals/animal/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -59,30 +62,37 @@ class _DrawerPageState extends State<DrawerPage> {
             ),
           ),
           ListTile(
-            leading: Icon(
-              FontAwesomeIcons.home,
-            ),
-            title: Text("Beranda"),
-            trailing: Icon(Icons.arrow_right),
-            onLongPress: () {},
-          ),
+              leading: Icon(
+                FontAwesomeIcons.home,
+              ),
+              title: Text("Beranda"),
+              trailing: Icon(Icons.arrow_right),
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => DashboardPage()));
+              }),
           ListTile(
             leading: Icon(FontAwesomeIcons.dungeon),
             title: Text("Kandang"),
             trailing: Icon(Icons.arrow_right),
-            onLongPress: () {},
+            onTap: () {
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => CagePage()));
+            },
           ),
           ListTile(
             leading: Icon(FontAwesomeIcons.dog),
             title: Text("Hewan"),
             trailing: Icon(Icons.arrow_right),
-            onLongPress: () {},
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => AnimalPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.supervised_user_circle),
             title: Text("Pengaturan Pengguna"),
             trailing: Icon(Icons.arrow_right),
-            onLongPress: () {},
           )
         ],
       ),

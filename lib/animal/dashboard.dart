@@ -1,13 +1,14 @@
-import 'package:animals/navigation/actionappbar.dart';
-import 'package:animals/navigation/drawer.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+import '../navigation/actionappbar.dart';
+import '../navigation/drawer.dart';
+
+class DashboardPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _DashboardPageState createState() => _DashboardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
           "Beranda",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        iconTheme: new IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [ActionAppBar()],
       ),
       drawer: DrawerPage(),
